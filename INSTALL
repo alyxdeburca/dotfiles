@@ -39,7 +39,8 @@ clear
 echo "Do you want to install kitty config files?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) rm -rf ~/.config/kitty/;
+        Yes ) 
+              rm -rf ~/.config/kitty/;
               ln -s ${BASEDIR}/kitty/ ~/.config/;
               break;;
         No ) break;;
