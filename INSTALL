@@ -9,13 +9,14 @@ clear
 echo "Do you want to install oh-my-zsh?"
 select yn in "Yes" "No"; do
     case $yn in
-        Yes ) sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
+        Yes ) rm -rf ~/.oh-my-zsh/;
+	      sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
               break;;
         No ) break;;
     esac
 done
 
-clear
+
 
 # zsh
 
