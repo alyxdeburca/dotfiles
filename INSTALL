@@ -1,0 +1,59 @@
+#!/bin/bash
+
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+clear
+
+# oh-my-zsh
+
+echo "Do you want to install oh-my-zsh?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
+              break;;
+        No ) break;;
+    esac
+done
+
+clear
+
+# zsh
+
+echo "Do you want to install zsh?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) 
+              rm -rf ~/.zshrc;
+              rm -rf ~/.zprofile;
+              ln -s ${BASEDIR}/zshrc ~/.zshrc;
+              ln -s ${BASEDIR}/zprofile ~/.zprofile;
+              break;;
+        No ) break;;
+    esac
+done
+
+clear
+
+# kitty
+
+echo "Do you want to install kitty config files?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) ln -s ${BASEDIR}/kitty/ ~/.config/;
+              break;;
+        No ) break;;
+    esac
+done
+
+clear
+
+# neofetch
+
+echo "Do you want to install neofetch config files?"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) ln -s ${BASEDIR}/neofetch/ ~/.config/;
+              exit;;
+        No ) exit;;
+    esac
+done
