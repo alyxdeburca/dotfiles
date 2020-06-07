@@ -13,7 +13,7 @@ These files will have been tested on Arch Linux, Void Linux and Ubuntu 20.04
 Run the following commands to install:
 
 ```
-$ git clone https://github.com/adam-burke/dotfiles
+$ git clone https://github.com/adam-burke0/dotfiles
 ```
 *This clones this repository to a folder called "dotfiles"*
 
