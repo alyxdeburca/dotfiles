@@ -97,11 +97,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+export EDITOR=nano
 export PATH=$PATH:"/home/$USER/.local/bin"
 neofetch
 alias asciivideo='DISPLAY= mpv --quiet --vo=caca'
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-  exec startx
-fi
-
+alias doc-sync='rclone sync /home/adam/Documents docs:/Documents'
+alias usb=lsusb.py
+alias smloadr=/home/adam/git/SMLoadr/BUILD/SMLoadr-linux-x86
+export HISTTIMEFORMAT='%d/%m/%y %T' 
