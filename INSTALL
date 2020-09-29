@@ -6,7 +6,7 @@ clear
 
 # oh-my-zsh
 
-echo "Do you want to install oh-my-zsh?"
+printf "Do you want to install oh-my-zsh?\n"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) rm -rf ~/.oh-my-zsh/;
@@ -16,11 +16,11 @@ select yn in "Yes" "No"; do
     esac
 done
 
-
+clear
 
 # zsh
 
-echo "Do you want to install zsh?"
+printf "Do you want to install zsh?\n"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) 
@@ -37,7 +37,7 @@ clear
 
 # kitty
 
-echo "Do you want to install kitty config files?"
+printf "Do you want to install kitty config files?\n"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) 
@@ -52,12 +52,30 @@ clear
 
 # neofetch
 
-echo "Do you want to install neofetch config files?"
+printf "Do you want to install neofetch config files?\n"
 select yn in "Yes" "No"; do
     case $yn in
         Yes ) rm -rf ~/.config/neofetch/;
               ln -s ${BASEDIR}/neofetch/ ~/.config/;
-              exit;;
-        No ) exit;;
+              break;;
+        No ) break;;
+    esac
+done
+
+clear
+
+printf "Do you want to install st(Simple Terminal)?\n"
+printf "\n"
+if [[ "$(id -u)" -ne 0 ]]; then 
+    printf "Please run as root\n\n"
+    read -p "Press any key to continue"
+    exit
+fi
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) ln -s ${BASEDIR}/st /usr/bin/st
+              ln -s ${BASEDIR}/st /usr/lib/st
+	      exit;;
+	No ) exit;;
     esac
 done
