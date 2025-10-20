@@ -12,7 +12,7 @@ select yn in "Yes" "No"; do
         Yes ) git clone https://aur.archlinux.org/paru-bin;
 			cd paru-bin;
 			makepkg -si;
-	      paru -S hyprland mate-polkit ffmpeg neovim viewnior rofi pavucontrol thunar starship wl-clipboard wf-recorder swww grimblast-git ffmpegthumbnailer tumbler playerctl noise-suppression-for-voice thunar-archive-plugin alacritty aylurs-gtk-shell wlogout sddm pamixer nwg-look nordic-theme papirus-icon-theme dunst noto-fonts noto-fonts-emoji brightnessctl hyprpicker-git hyprlock;
+	      paru -S hyprland mate-polkit ffmpeg neovim viewnior rofi pavucontrol thunar starship wl-clipboard wf-recorder swww grimblast-git ffmpegthumbnailer tumbler playerctl noise-suppression-for-voice thunar-archive-plugin alacritty aylurs-gtk-shell wlogout sddm pamixer nwg-look nordic-theme papirus-icon-theme dunst noto-fonts noto-fonts-emoji brightnessctl hyprpicker-git hyprlock winboat-bin;
               break;;
         No ) break;;
     esac
