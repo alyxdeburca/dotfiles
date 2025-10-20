@@ -4,6 +4,23 @@ BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 clear
 
+# Dependencies
+
+printf "Do you want run Arch install scripts?\n"
+select yn in "Yes" "No"; do
+    case $yn in
+        Yes ) git clone https://aur.archlinux.org/paru-bin;
+			cd paru-bin;
+			makepkg -si;
+	      paru -S hyprland mate-polkit ffmpeg neovim viewnior rofi pavucontrol thunar starship wl-clipboard wf-recorder swww grimblast-git ffmpegthumbnailer tumbler playerctl noise-suppression-for-voice thunar-archive-plugin alacritty aylurs-gtk-shell wlogout sddm pamixer nwg-look nordic-theme papirus-icon-theme dunst noto-fonts noto-fonts-emoji brightnessctl hyprpicker-git hyprlock;
+              break;;
+        No ) break;;
+    esac
+done
+
+clear
+
+
 # oh-my-zsh
 
 printf "Do you want to install oh-my-zsh?\n"
@@ -17,6 +34,7 @@ select yn in "Yes" "No"; do
 done
 
 clear
+
 
 # zsh
 
